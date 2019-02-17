@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--<meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0，minimum-scale=1，user-scalable=no">
+    <link rel="stylesheet" href="../../swiper/swiper.min.css">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link rel="stylesheet " href="../../font-awesome/css/font-awesome.css">
+    <link rel="stylesheet " href="../../jQuery/css/font.css">
+    <script src="../../jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    *,:after,:before{margin: 0;padding: 0;
+        box-sizing: border-box;}
+    ul{list-style: none;  }
+    a{color:inherit;text-decoration: none;}
+    input,button{outline: none}
+    html{height: 100%;
+        font-size: 12px;font-family:"微软雅黑"}
+    body{background: #eeeeee;min-width: 320px; height: 100%;
+        padding-bottom:60px ;
+        box-sizing: border-box;
+        position: relative;}
+    @media(min-width: 375px){html{font-size: 14px}}
+    @media(min-width: 640px){html{font-size: 20px}}
+    main{  height: 100%;}
+    header{width: 100%;background: #0f3b97;height:3.17rem; background: url(../img/bottomBG.png) repeat-x;}
+    header ul li{float: left;width: 33.333333%}
+    header .img1 img{width:21px;height:18px;
+        margin-top: 12px;    margin-left: 20px;}
+    header .img2 img{width:94px;height:23px;margin-top: 12px;}
+    header .img3 img{width:26px;height:26px;margin-top: 12px;}
+    /*头部导航*/
+    .img1 .active{height:100%;left:0;
+        top:0;position: absolute;
+        z-index: 999999;
+        background-color: #1866B0;
+        opacity: 0.9;}
+    .img1 .active p{color: white;
+        padding: 14px 44px;
+        font-size: 1.3rem;
+        border-top: 1px solid #ececec;
+    }
+    .img1 .active span{  margin-bottom: 62px;
+        display: block;}
+    .img1 .active span img{width: 25px ;height: 23px;float:right}
+    .img1 .active p img{width: 12px;
+        height: 12px;
+        margin-top: -4px;
+        margin-left: 23px;
+    }
+    main .top{ height: 60px;width: 100%;
+        background-color: #f1f5f8;}
+    main .top ul{text-align: center}
+    main .top ul li{float: left;;font-size: 1.3rem;width:25%;margin-top: 18px;}
+    main .pment {
+        padding-top: 20px;
+        float: left;
+        background: #fff;
+        min-height: 600px;
+        width: 100%;
+    }
+    .pment .about_info {
+        float: left;
+        padding-left: 40px;
+        font-size: 14px;
+        color: #323232;
+        line-height: 30px;
+    }
+</style>
+<body>
+<header>
+    <ul>
+        <li class="img1">
+            <img src="../img/top_nav.png" class="num">
+            <div class="active">
+                <span><img src="../img/gb.png" style="margin-left: 25px;"></span>
+                <p style="border-left:4px solid #e1c455">人机界面<img src="../img/nav_fr.png"></p>
+                <p>井道电气<img src="../img/nav_fr.png"></p>
+                <p>门机系统<img src="../img/nav_fr.png"></p>
+                <p>线束线缆<img src="../img/nav_fr.png"></p>
+                <p>控制系统<img src="../img/nav_fr.png"></p>
+                <p style="border-bottom:1px solid #ececec">解决方案<img src="../img/nav_fr.png"></p>
+            </div>
+        </li>
+        <li class="img2" style="text-align: center"><img src="../img/logo%20(1).png"></li>
+        <li class="img3"><img src="../img/sousuo.png" style="float:right;margin-right: 25px;"></li>
+    </ul>
+    <script>
+        $(".active").hide();
+        $(".num").click(function(){
+            $(this).next().show()
+        })
+        $("span").click(function(){
+            $(this).parent().hide()
+        })
+    </script>
+</header>
+<main>
+    <input type="text" placeholder="请输入关键字" class="word" style=" padding: 0 12px 0 10px;
+    height: 40px;border: #8a8a8b solid 1px;line-height: 40px;position: absolute;z-index: 3;right: 0;
+    border-radius: 20px;background: rgba(255,255,255,0.7);display:none">
+    <div class="top">
+        <ul>
+            <li style="color: #0054a7;font-weight: bold;">联系我们</li>
+            <li>供应商征集</li>
+            <li>留言反馈</li>
+            <li>微信公众号</li>
+        </ul>
+    </div>
+    <img src="../img/201710241317331733.jpg" width="100%" height="232" style="margin:10px 0;">
+    <div class="pment">
+        <div class="about_info">
+            <p>	<span style="font-size:22px;line-height:1.5;color:#337FE5;"><strong>贝思特总部</strong></span></p>
+            <p>	<span style="font-family:Microsoft YaHei;">
+                <span style="color:#333333;">
+                    <span style="color:#333333;">地址：</span>
+                    上海市浦东新区航头镇大麦湾工业园区航启路1号</span><br>
+                <span style="color:#333333;">邮编：201316</span><br>
+                <span style="background-color:#FFFFFF;color:#333333;">
+                    <strong>市场/销售</strong></span><br>
+                <span style="color:#333333;">国内热线：+86-21-58229351、58226900</span><br>
+                <span style="color:#333333;">传真：+86-21-58223128、58225564</span><br>
+                <span style="color:#333333;">邮箱：sales@shbst.com</span><br>
+                <span style="color:#333333;">国际热线：+86-21-58222286、58229708</span><br>
+                <span style="color:#333333;">传真：+86-21-58221353</span><br>
+                <span style="color:#333333;">邮箱：export@shbst.com</span><br>
+                <span style="background-color:#FFFFFF;color:#333333;"><strong>人力资源</strong>
+                </span><br><span style="color:#333333;">电话：+86-21-58229129</span><br>
+                <span style="color:#333333;">邮箱：hr@shbst.com</span><br></span>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(".img3").click(function(){
+            $(".word").stop().fadeToggle();
+        })
+    </script>
+</main>
+</body>
+</html>

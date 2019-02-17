@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0，minimum-scale=1，user-scalable=no">
+    <link rel="stylesheet" href="../../swiper/swiper.min.css">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link rel="stylesheet " href="../../font-awesome/css/font-awesome.css">
+    <link rel="stylesheet " href="../../jQuery/css/font.css">
+    <script src="../../jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    *,:after,:before{margin: 0;padding: 0;
+        box-sizing: border-box;}
+    ul{list-style: none;  }
+    a{color:inherit;text-decoration: none;}
+    input,button{outline: none}
+    html{height: 100%;
+        font-size: 12px;font-family:"微软雅黑"}
+    body{background: #eeeeee;min-width: 320px; height: 100%;
+        padding-bottom:60px ;
+        box-sizing: border-box;
+        position: relative;}
+    @media(min-width: 375px){html{font-size: 14px}}
+    @media(min-width: 640px){html{font-size: 20px}}
+    main{  height: 100%;}
+    header{width: 100%;background: #0f3b97;height:3.17rem; background: url(../img/bottomBG.png) repeat-x;}
+    header ul li{float: left;width: 33.333333%}
+    header .img1 img{width:21px;height:18px;
+        margin-top: 12px;    margin-left: 20px;}
+    header .img2 img{width:94px;height:23px;margin-top: 12px;}
+    header .img3 img{width:26px;height:26px;margin-top: 12px;}
+    /*头部导航*/
+    .img1 .active{height:100%;left:0;
+        top:0;position: absolute;
+        z-index: 999999;
+        background-color: #1866B0;
+        opacity: 0.9;}
+    .img1 .active p{color: white;
+        padding: 14px 44px;
+        font-size: 1.3rem;
+        border-top: 1px solid #ececec;
+    }
+    .img1 .active span{  margin-bottom: 62px;
+        display: block;}
+    .img1 .active span img{width: 25px ;height: 23px;float:right}
+    .img1 .active p img{width: 12px;
+        height: 12px;
+        margin-top: -4px;
+        margin-left: 23px;
+    }
+    main .top{ height: 60px;width: 100%;
+        background-color: #f1f5f8;}
+    main .top ul{text-align: center}
+    main .top ul li{float: left;;font-size: 18px;width:33%;margin-top: 18px;}
+    main .pment {
+        padding-top: 20px;
+        float: left;
+        background: #fff;
+        min-height: 600px;
+    }
+    .pment .about_info {
+        float: left;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #323232;
+        line-height: 30px;
+        padding-bottom: 20px;
+        min-height: 600px;
+    }
+</style>
+<body>
+<header>
+    <ul>
+        <li class="img1">
+            <img src="../img/top_nav.png" class="num">
+            <div class="active">
+                <span><img src="../img/gb.png" style="margin-left: 25px;"></span>
+                <p style="border-left:4px solid #e1c455">人机界面<img src="../img/nav_fr.png"></p>
+                <p>井道电气<img src="../img/nav_fr.png"></p>
+                <p>门机系统<img src="../img/nav_fr.png"></p>
+                <p>线束线缆<img src="../img/nav_fr.png"></p>
+                <p>控制系统<img src="../img/nav_fr.png"></p>
+                <p style="border-bottom:1px solid #ececec">解决方案<img src="../img/nav_fr.png"></p>
+            </div>
+        </li>
+        <li class="img2" style="text-align: center"><img src="../img/logo%20(1).png"></li>
+        <li class="img3"><img src="../img/sousuo.png" style="float:right;margin-right: 25px;"></li>
+    </ul>
+    <script>
+        $(".active").hide();
+        $(".num").click(function(){
+            $(this).next().show()
+        })
+        $("span").click(function(){
+            $(this).parent().hide()
+        })
+    </script>
+</header>
+<main>
+    <input type="text" placeholder="请输入关键字" class="word" style=" padding: 0 12px 0 10px;
+    height: 40px;border: #8a8a8b solid 1px;line-height: 40px;position: absolute;z-index: 3;right: 0;
+    border-radius: 20px;background: rgba(255,255,255,0.7);display:none">
+    <div class="top">
+        <ul>
+            <li style="color: #0054a7;font-weight: bold;">就业与发展</li>
+            <li>薪酬福利</li>
+            <li>招聘职位</li>
+        </ul>
+    </div>
+    <img src="../img/201710310835513551.jpg" width="100%" height="232">
+    <div class="pment">
+        <div class="about_info">
+            <p class="p" style="white-space:normal;">
+                <span style="color:#333333;font-family:'Microsoft YaHei';">
+                    贝思特为员工提供良好的培训，发展空间和职业生涯。在这里，您得到的不仅是一份工作，
+                    而且是一个可以不断发展的职业生涯。</span>
+            </p>
+            <p class="p" style="white-space:normal;padding-top:25px;">
+                <b><span style="color:#333333;font-family:'Microsoft YaHei';font-size:16px;">充满挑战与回报的职业生涯</span></b>
+            </p>
+            <p class="p" style="white-space:normal;">	<span style="color:#333333;font-family:'Microsoft YaHei';">
+                在贝思特，您会发现工作充满了乐趣与挑战。在不断接受挑战，超越自我的过程中，个人的专业技能，
+                核心素质和领导力将都得到充分的发展。贝思特不仅提供了充满挑战的职业生涯，也同时为员工迎接挑战给予充分的支持。
+                这些支持来自您的上级主管，您所在的团队直至公司高层。每当员工出色的完成了工作，公司都会给与充分的认可与肯定。</span>
+            </p>
+            <p class="p" style="white-space:normal;padding-top:25px;">
+                <b><span style="color:#333333;font-family:'Microsoft YaHei';font-size:16px;">广阔的发展空间</span></b>
+            </p>
+            <p style="font-family:'Microsoft YaHei';font-size:14px;color:#333333;">
+                <span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp; 上海贝恩科电缆是专业的电梯电缆及线束加工制造商，
+                    提供全方位的电梯电缆配套解决方案。产品包括随动电缆、井道电缆、机房电缆、轿顶电缆、井道配件等。
+                    公司一直注重产品研发与技术创新，相继开发无铅环保型聚氯乙烯护套电梯电缆、低烟无卤阻燃环保型电梯
+                    电缆等。雄厚的技术实力，先进的专业设备，严格的生产管理与质量控制，使贝恩科成为国内外各大知名电
+                    梯品牌首选供应商。</span>
+            </p>
+            <p style="font-family:'Microsoft YaHei';font-size:14px;color:#333333;">
+                <span style="font-size:14px;margin-bottom: 100px;display: block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BST将持续加大产品研发与技术创新力度
+                    ，将"质量、创新、服务"所赋含的深层意义铭记于心，为客户创造价值，提供更有竞争力的系统解决方案，
+                    为用户提供更加安全舒适的乘梯环境。</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(".img3").click(function(){
+            $(".word").stop().fadeToggle();
+        })
+    </script>
+</main>
+</body>
+</html>

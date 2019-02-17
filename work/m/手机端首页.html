@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0，minimum-scale=1，user-scalable=no">
+    <link rel="stylesheet" href="../../swiper/swiper.min.css">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link rel="stylesheet " href="../../font-awesome/css/font-awesome.css">
+    <link rel="stylesheet " href="../../jQuery/css/font.css">
+    <link rel="stylesheet " href="手机端.css">
+    <script src="../../jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<header>
+    <ul>
+        <li class="img1">
+            <img src="../img/top_nav.png" class="num">
+            <div class="active">
+                <span><img src="../img/gb.png"></span>
+                <p style="border-left:4px solid #e1c455">人机界面<img src="../img/nav_fr.png"></p>
+                <p>井道电气<img src="../img/nav_fr.png"></p>
+                <p>门机系统<img src="../img/nav_fr.png"></p>
+                <p>线束线缆<img src="../img/nav_fr.png"></p>
+                <p>控制系统<img src="../img/nav_fr.png"></p>
+                <p style="border-bottom:1px solid #ececec">解决方案<img src="../img/nav_fr.png"></p>
+            </div>
+        </li>
+        <li class="img2" style="text-align: center"><img src="../img/logo%20(1).png"></li>
+        <li class="img3"><img src="../img/sousuo.png" style="float:right"></li>
+
+    </ul>
+    <script>
+        $(".active").hide();
+        $(".num").click(function(){
+            $(this).next().show()
+        })
+        $("span").click(function(){
+            $(this).parent().hide()
+        })
+        /*$(".document").click(function(s){
+            s.stopPropagation()
+        })*/
+    </script>
+</header>
+<main>
+    <input type="text" placeholder="请输入关键字" class="word" style=" padding: 0 12px 0 10px;
+    height: 40px;border: #8a8a8b solid 1px;line-height: 40px;position: absolute;z-index: 3;right: 0;
+    border-radius: 20px;background: rgba(255,255,255,0.7);display:none">
+    <!--轮播图-->
+    <div class="box1">
+        <div class="imgs">
+            <a href=""  class="show"> <img src="../img/20170112104405445.jpg"></a>
+            <a href=""><img src="../img/201709151931463146.jpg"></a>
+            <a href=""> <img src="../img/201709191645454545.jpg"></a>
+            <a href=""><img src="../img/201711161513511351.jpg"></a>
+            <a href=""> <img src="../img/201805211451395139.jpg"></a>
+        </div>
+        <ul class="button">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span class="right"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+        <span class="left"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    </div>
+    <script>
+        $(".img3").click(function(){
+            $(".word").stop().fadeToggle();
+        })
+    </script>
+    <script>
+        var img_link=document.querySelectorAll(".imgs a");
+        var img_btn=document.querySelectorAll(".button li");
+        var H=0;
+        function a(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            this.className="active";
+            img_link[this.num].className="show";
+            H=this.num;
+        }
+        img_btn[0].num=0;//实现图片和按钮的关联
+        img_btn[1].num=1;
+        img_btn[2].num=2;
+        img_btn[3].num=3;
+        img_btn[4].num=4;
+        img_btn[0].addEventListener ("click",a);
+        img_btn[1].addEventListener ("click",a);
+        img_btn[2].addEventListener ("click",a);
+        img_btn[3].addEventListener ("click",a);
+        img_btn[4].addEventListener ("click",a);
+        //右边按钮
+        var right=document.querySelector(".right");
+        function b(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            H++;
+            if(H>=img_btn.length){
+                H=0
+            }img_btn[H].className="active";
+            img_link[H].className="show";
+        }
+        right.addEventListener ("click",b);
+        //左边按钮
+        var left=document.querySelector(".left");
+        function c(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            H--;
+            if( H<0){
+                H=img_btn.length-1;
+            }
+            img_btn[H].className="active";
+            img_link[H].className="show";
+        }
+        left.addEventListener ("click",c);
+        //定时器
+        var t=setInterval(b,5000);
+        var box1=document.querySelector(".box1");
+        function d(){
+            clearInterval(t);
+        }
+        box1.addEventListener("mouseover",d);
+        function e(){
+            t=setInterval(b,5000);
+        }
+        box1.addEventListener("mouseout",e)
+    </script>
+    <div class="product">
+        <div class="border">
+            <img src="../img/HproIcon02_h.png">
+            <p class="p">人机界面</p>
+        </div>
+        <div class="border">
+            <img src="../img/201701051624202420.png">
+            <p class="p">井道电气</p>
+        </div>
+        <div class="border">
+            <img src="../img/2017011117020828.png">
+            <p class="p">门系统</p>
+        </div>
+        <div class="border">
+            <img src="../img/HproIcon04_h.png">
+            <p class="p">线束线缆</p>
+        </div>
+        <div class="border">
+            <img src="../img/HproIcon05_h.png">
+            <p class="p">控制系统</p>
+        </div>
+    </div>
+    <div class="project">
+        <div class="title">
+            <h5>案例中心</h5>
+            <a href="">更多</a>
+        </div>
+        <div class="box">
+            <div class="box1">
+                <img src="../img/201807181444204420.jpg">
+                <span>中国尊</span>
+            </div>
+            <div class="box2">
+                <img src="../img/201711061634333433.jpg">
+                <span>哈尔滨香格里拉</span>
+            </div>
+            <div class="box3">
+                <img src="../img/201709261410561056.jpg">
+                <span>上海白玉兰广场</span>
+            </div>
+        </div>
+    </div>
+    <!--最新资讯-->
+    <div class="news">
+        <div class="title">
+            <h5>最新资讯</h5>
+            <a href="">更多</a>
+        </div>
+        <div class="box">
+            <div class="box1">
+                <img src="../img/201808151428232823.jpg">
+                <img src="../img/more.png" class="fix">
+                <span>2018巴西展贝思特与你相遇</span>
+            </div>
+            <div class="box2">
+                <img src="../img/201804281450505050.jpg">
+                <img src="../img/more.png" class="fix1">
+                <span>加装梯  电气系统解决方案</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

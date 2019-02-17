@@ -1,0 +1,110 @@
+*,:after,:before{margin: 0;padding: 0;
+    box-sizing: border-box;}
+ul{list-style: none;  }
+a{color:inherit;text-decoration: none;}
+input,button{outline: none}
+html{height: 100%;
+    font-size: 12px;font-family:"微软雅黑"}
+body{background: #eeeeee;min-width: 320px; height: 100%;
+    padding-bottom:60px ;
+    box-sizing: border-box;
+    position: relative;}
+@media(min-width: 375px){html{font-size: 14px}}
+@media(min-width: 640px){html{font-size: 20px}}
+footer {/*设置底部固定导航，固定到body留padding的位置上*/
+    position: fixed;
+    left: 0;bottom: 0;
+    height: 60px;width: 100%;
+    background: #0f3b97;}
+main{/*设置main表示高度为100%，在里面放主要的内容，
+            如果内容高度超过main就要设置 overflow：auto；表示内容
+             没有超过时不出现滚动条，内容超过时出现滚动条*/
+    height: 100%;
+    /*这种可能出现横向的滚动条*/
+
+    /*这种不会出现横向滚动条*/}
+footer ul li{float: left;color:white;font-size: 15px;width: 25%;margin-top: 20px;}
+footer ul{text-align: center}
+footer img{border: none;
+    width: 90px;
+    right: 3px;
+    position: fixed;
+    bottom: 66px;}
+header{width: 100%;background: #0f3b97;height:3.17rem; }
+header ul li{float: left;width: 33.333333%}
+header .img1 img{width:21px;height:18px;
+    margin-top: 12px;    margin-left: 20px;}
+header .img2 img{width:94px;height:23px;margin-top: 12px;}
+header .img3 img{width:26px;height:26px;margin-top: 12px;}
+/* 轮播图*/
+.box1{width:100%;;cursor: pointer;height:220px;
+    position: relative;margin: 0 auto;padding: 0;top:0;
+}
+.button{ position: relative;z-index: 2;text-align: center;margin-left: 75px;
+    top:-160px;}
+.button li{list-style: none;background: #1f49a3);
+    border-radius: 100%;width: 17px;height: 17px;;
+    top:350px;margin: 0 6px;float: left;
+    position: relative;text-align: center;line-height: 17px}
+.imgs a{transition: opacity 1s ease-in-out;
+    opacity: 0;position:absolute;}
+.imgs img{width:100%;height: 220px;}
+.box1 .imgs .show{opacity: 1;z-index: 1}
+.button .active {background:#1f49a3 }
+.right {position: absolute;display: none;
+    z-index: 2;right: 0;top:150px;  }
+.right i{font-size:40px;margin-right: 10px}
+.left i{font-size:40px;margin-left: 10px}
+.left{position: absolute;  z-index: 2;top:150px;left:0;display: none}
+/**/
+.product{
+    margin: 8px auto;width: 95%;}
+.product .border{border: 2px solid #E2E2E2;width: 18.9%;display: inline-block;
+    background-color: #fff;text-align: center}
+.border p{ font-size: 8px;    margin-bottom: 11px;}
+.border img{margin:11px 12px;
+    width: 59%;height: 39%}
+/*案例中心*/
+.project{background: white;margin: 8px auto;width: 95%;height: 180px;}
+.project .title{width: 100%;height: 45px;padding: 14px 15px }
+.project .title h5{float: left;}
+.project .title a{float: right;color:#0f78cb}
+.project .box{height: 130px;width: 95%; margin:2px 10px;;text-align: center}
+.project .box .box1{width: 31.8%;height: 130px;float: left}
+.project .box .box2{width: 32%;height: 130px;float: left;margin: 0 6px;}
+.project .box .box3{width: 32%;height: 130px;float: left}
+.project .box img{width:100%;height: 59%;    margin-bottom: 16px;}
+.project .box span{font-size: 8px;color: #666666;}
+/*最新资讯*/
+.news{background: white;margin: 8px auto;width: 95%;height: 210px;}
+.news .title{width: 100%;height: 45px;padding: 14px 15px }
+.news .title h5{float: left;}
+.news .title a{float: right;color:#0f78cb}
+.news .box{height: 130px;width: 95%; margin:2px 10px;;text-align: center}
+.news .box .box1{width: 47.8%;height: 130px;float: left;position: relative}
+.news .box .box2{width: 48%;height: 130px;float: left;margin: 0 6px;position: relative}
+.news .box img{width:100%;height: 59%;    margin-bottom: 16px;}
+.news .box span{font-size: 8px;color: #666666;}
+.news .box .box1 .fix{position:absolute;top:7px;width: 15%;
+    height: 15%;}
+.news .box .box2 .fix1{position:absolute;top:7px;width: 15%;
+    height: 15%;}
+/*头部导航*/
+.img1 .active{height:100%;left:0;
+top:0;position: absolute;
+    z-index: 999999;
+    background-color: #1866B0;
+    opacity: 0.9;}
+.img1 .active p{color: white;
+    padding: 14px 44px;
+    font-size: 1.3rem;
+    border-top: 1px solid #ececec;
+}
+.img1 .active span{  margin-bottom: 62px;
+    display: block;}
+.img1 .active span img{width: 25px ;height: 23px;float:right}
+.img1 .active p img{width: 12px;
+    height: 12px;
+    margin-top: -4px;
+    margin-left: 23px;
+}

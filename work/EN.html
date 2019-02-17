@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../swiper/swiper.min.css">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet " href="../font-awesome/css/font-awesome.css">
+    <link rel="stylesheet " href="../jQuery/css/font.css">
+    <script src="../jQuery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        body {background: url(img/body_bg.png) repeat;font-size: 14px;line-height: 24px;
+            font-family: Arial,"微软雅黑","宋体"; color: #666; width: 100%;  }
+        a{text-decoration: none}
+        ul{list-style: none}
+        header{width: 100%;height: 90px;}
+        .logo{margin: 23px 43px;}
+        .logo_left{float: right}
+        .logo_left ul{float: right}
+        .logo_left ul li{display: block;float: left;margin: 33px 10px}
+        .logo_left ul li a{margin-left: 9px;color: #999;font-size: 14px}
+        .logo_left .two{border-left:1px dotted #aaa;width: 90px ;text-align: center;border-right:1px dotted #aaa;}
+        .logo_left input {width: 160px;height: 26px;border:none;padding-left:15px;color: #C7C7C7;font-size: 12px;border-radius: 17px;}
+        .logo_left ul li a:hover{color:#1f49a3}
+        main .nav{width: 100%;height: 50px;background:#1f49a3 }
+        .nav_1 {height: 48px;  }
+        main .nav ul{float: right}
+        main .nav ul li{display: block;float: left;border-right:1px dotted #aaa;width: 88px;
+            height: 50px; line-height: 50px;  padding-left: 45px;
+            padding-right: 28px;;}
+        main .nav ul li a{color:white;margin-right: 2px;/*38*/}
+        main .nav ul li div{
+            position: absolute;
+            top: 139px;
+            z-index: 10;
+            zoom: 1;
+            padding-bottom: 10px;
+            line-height: 50px;}
+        main .nav ul li div a{display: inline-block;
+            color:#999999;
+            text-indent: 44.5px;}
+        .open{left: 215px; height: 200px;width: 200px;}
+        .open1{left: 377px;height: 104px;width: 200px;}
+        .open2{left: 539px;height: 251px;width: 194px;}
+        .open3{left: 863px;height: 104px;width: 200px;}
+        .open4{left:1025px;height: 104px;width: 200px;}
+        .open5{left:1187px;height: 147px;width: 162px;}
+        main .nav ul li div a:hover {color:#1f49a3}
+       /* 轮播图*/
+        .box1{width:100%;;cursor: pointer;height:480px;
+            position: relative;margin: 0 auto;padding: 0;top:0;
+            }
+        .button{ position: relative;z-index: 2;text-align: center;margin-left: 75px;
+            top: 86px;}
+        .button li{list-style: none;background: #1f49a3);
+            border-radius: 100%;width: 17px;height: 17px;;
+            top:350px;margin: 0 6px;float: left;
+            position: relative;text-align: center;line-height: 17px}
+        .imgs a{transition: opacity 1s ease-in-out;
+            opacity: 0;position:absolute;}
+        .imgs img{width:100%;height: 480px;}
+        .box1 .imgs .show{opacity: 1;z-index: 1}
+        .button .active {background:#1f49a3 }
+        .right {position: absolute;display: none;
+            z-index: 2;right: 0;top:150px;  }
+        .right i{font-size:40px;margin-right: 10px}
+        .left i{font-size:40px;margin-left: 10px}
+        .left{position: absolute;  z-index: 2;top:150px;left:0;display: none}
+        .product{border: 1px solid #EFEEEE;background-color: #fff;
+            margin: 21px auto;width: 1200px;height: 332px;}
+        .title {height: 62px;line-height: 62px;text-align: center;font-size: 18px;}
+        .product a { color: #505355;float:right;font-size: 14px;font-weight: normal;
+          margin-right: 40px}
+        .product a:hover{color:#1f49a3}
+        .product .border{border: 2px solid #E2E2E2;width: 212px;height: 248px;display: inline-block;
+        margin: 0 10px;}
+        .border i{display: block;width: 31px;height: 2px;background-color: #868686; margin-left: 90px;margin-top: 17px;}
+        .border p{ padding-top: 25px;margin-left: 59px;}
+        .border .on{margin-top:41px;margin-bottom: 5px ;margin-left: 55px;position: relative;z-index: 1}
+        .border .hide{    position: absolute;  top: 747px;z-index:-1}
+        .product .border:hover{color:#1f49a3;border-color: #1f49a3;}
+        .product .border:hover i{background: #1f49a3}
+        .product .border:hover .on{z-index: -1}
+        .product .border:hover .hide{z-index: 1}
+        /*项目案例*/
+        .project{background: #fff;margin: 21px auto;width: 1200px;height: 453px;;margin-bottom: 0;}
+        .box{
+            height: 350px;
+            overflow: hidden;
+            width: 1130px;
+            margin: 0 auto;
+            position: relative;top:-24px;
+        }
+        #roll{width: 200%}
+        #roll dd{
+            float: left;
+            margin-right: 34px;
+            width: 352px;height: 346px;border: 1px solid #EFEEEE;
+            display: block;  }
+        .project .prev{left: 1141px;position: relative;top:-39px;}
+        .project .next{left: 1141px;position: relative;top:-39px;}
+        #roll dd img{height: 216px;width: 352px;}
+        .project #roll dd .HlistText{
+            width: 352px;
+            height: 128px;  }
+        .project #roll dd .HlistText span{
+            font-size: 14px;
+            font-weight: normal;
+            color: #333;
+            height: 38px;
+            line-height: 38px;
+            border-bottom: 1px solid #666666;
+            display: inline-block;
+            padding-top: 10px;
+        }
+        .project #roll dd .HlistText p {
+            padding-left: 85px;
+            padding-right: 67px;
+            line-height: 26px;
+            color: #999;
+            padding-top: 12px;
+        }
+        .project #roll dd:hover> .HlistText{background: #17519a}
+        .project #roll dd:hover p{color: white}
+        .project #roll dd:hover span{color: white;border-bottom:1px solid white}
+
+        footer{width: 100%;height: 120px;background: url(img/bottomBG.png) repeat-x;}
+        footer ul{width: 1200px;
+            margin: auto;
+            color: white}
+        footer ul li{float: left;margin: 48px 6px}
+        .tip{width: 342px;}
+        .tip a{margin-right: 20px; }
+        .mid{width:168px;}
+        .tip1 {width:470px;}
+        .photo{margin-top: 16px;margin-right: 87px;height: 10px;}
+        .search_btn {margin-right: 10px;position: relative;right: 40px;}
+
+        /*新闻*/
+        .news{border: 1px solid #EFEEEE;background:white;margin: 21px auto;width: 1200px;height: 453px;}
+        .layui-carousel-ind ul{display: none}
+        .layui-carousel[lay-arrow=always] .layui-carousel-arrow {
+            opacity: 1;
+            left: 1148px;
+            top: -42px;
+        }
+        .layui-carousel-arrow {
+            display: none\9;
+            opacity: 0;
+            position: absolute;
+            left: 10px;
+            top: 30%;
+            margin-top: 5px;
+            width: 15px;
+            height: 15px;
+            line-height:13px;
+            text-align: center;
+            font-size: 10px;
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            background-color:white;
+            color: black;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            cursor: pointer;
+        }
+        .news #test1 .item{width: 1159px;height: 367px;background: white;margin-left:20px;}
+        .news #test1 a{border: 1px solid #aaaaaa;width:545px;height: 166px;display: inline-block;float: left;;position: relative;
+            }
+        .news #test1 .item2{margin-left: 60px;}
+        .news #test1 .item3{margin-top: 30px;}
+        .news #test1 .item4{margin-left: 60px;margin-top: 30px;}
+        .news #test1 .HnewsPic img{width: 269px;height: 166px;}
+        .news #test1 .Hnewstext {
+            background-color: #F9F9F9;
+            height: 100%;
+            padding-left: 296px;
+            padding-right: 26px;
+        }
+        .news #test1 .Hnewstext h5 {
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
+            line-height: 38px;
+            padding-top: 10px;
+        }
+        .news #test1 .Hnewstext i {
+            display: block;
+            width: 34px;
+            height: 1px;
+            background-color: #999999;
+        }
+        .news #test1 .Hnewstext p {
+                     line-height: 22px;
+                     color: #999999;
+                     font-size: 12px;
+                     padding-top: 9px;
+                 }
+        .news #test1 .Hnewstext em {
+            display: block;
+            font-size: 14px;
+            font-style: normal;
+            color: #c9c9c9;
+            padding-top: 7px;
+        }
+        .news #test1 .HnewsPic{float: left;position: relative}
+        .news #test1 .HnewsPic span{
+            position: absolute;
+            top: 60px;
+            right: 0;
+            display: block;
+            width: 16px;
+            height: 43px;
+            background: url(img/Hnewsarrow.png) no-repeat;
+            z-index: 2;
+        }
+        .news #test1 .item1:hover span{background: url(img/Hnewsarrow1.png) no-repeat;}
+        .news #test1 .item2:hover span{background: url(img/Hnewsarrow1.png) no-repeat;}
+        .news #test1 .item3:hover span{background: url(img/Hnewsarrow1.png) no-repeat;}
+        .news #test1 .item4:hover span{background: url(img/Hnewsarrow1.png) no-repeat;}
+        .news #test1 .item1:hover .Hnewstext{background:  #1f49a3;}
+        .news #test1 .item1:hover h5{color:white;}
+        .news #test1 .item1:hover p{color:white;}
+        .news #test1 .item1:hover em{color:white;}
+        .news #test1 .item1:hover i{background-color:white;}
+
+        .news #test1 .item2:hover .Hnewstext{background:  #1f49a3;}
+        .news #test1 .item2:hover h5{color:white;}
+        .news #test1 .item2:hover p{color:white;}
+        .news #test1 .item2:hover em{color:white;}
+        .news #test1 .item2:hover i{background-color:white;}
+
+        .news #test1 .item3:hover .Hnewstext{background:  #1f49a3;}
+        .news #test1 .item3:hover h5{color:white;}
+        .news #test1 .item3:hover p{color:white;}
+        .news #test1 .item3:hover em{color:white;}
+        .news #test1 .item3:hover i{background-color:white;}
+
+        .news #test1 .item4:hover .Hnewstext{background:  #1f49a3;}
+        .news #test1 .item4:hover h5{color:white;}
+        .news #test1 .item4:hover p{color:white;}
+        .news #test1 .item4:hover em{color:white;}
+        .news #test1 .item4:hover i{background-color:white;}
+
+
+        /*置顶*/
+        .top{position:fixed;top:453px;right:0;z-index: 20;}
+        .top img{width: 46px;height: 46px;}
+        /*固定部分*/
+        .track {position: fixed;right: -194px;top: 200px;z-index: 20;
+        /*width: 240px; height: 251px;*/}
+        .track .online {width: 240px;height: 125px;border-bottom: 1px solid #F9F9F9;overflow: hidden;}
+        .track span {display: block;float: left;width: 16px;height: 105px; background-color: #17519A;
+            font-size: 16px;color: #fff;line-height: 18px;padding: 10px 15px 10px 15px;text-align: center}
+        .track ul {float: left}
+        .track ul li:first-child {border-bottom: 1px solid #f9f9f9;}
+        .track .online li a {display: block;padding-left: 54px;background: url(img/messageIcon.png) no-repeat 24px center;color: #414446  }
+        .track .online li {line-height: 62px;}
+        .track ul li {height: 62px;width: 194px;background-color: #fff;}
+        .clear {clear: both;height: 0;overflow: hidden;}
+        .track .free li a {display: block;padding-left: 24px;padding-top: 16px;}
+        .track .free li a i {display: block;padding-left: 30px;font-style: normal;background: url(img/phoneIcon.png) no-repeat left center;  }
+        .track:hover{right:0;transition: 0.7s}
+        .track ul li a:hover{color:#1f49a3 ;}
+    </style>
+</head>
+<body>
+<header>
+    <img src="img/logo.png" class="logo">
+    <div class="logo_left">
+        <ul>
+            <li>
+                <img src="img/caigouIcon.png">
+                <a href="" class="plat" onclick="window.open('采购平台.html')">Procurement Platform</a>
+            </li>
+            <li class="two">
+                <img src="img/EmailIcon.png"><a href="">E-mail</a>
+            </li>
+            <li>
+                <a href="" onclick="window.open('index.html')">CN </a>/<a href="">EN</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Please enter key words" class="word">
+                <a href="" class="search_btn" id="search"><img src="img/searchBtn.png"></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+       var input=document.querySelector(".word");
+        var search=document.querySelector("#search");
+        search.addEventListener("click",function(){
+            if(input.value.length<1){
+                alert("请输入关键字")
+            }
+        })
+    </script>
+</header>
+<main>
+    <div class="nav">
+        <div class="nav_1">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About BST</a>
+                    <div class="open">
+                        <a href="" onclick="window.open('公司简介.html')">Procurement Platform</a>
+                        <a href="" onclick="window.open('文化理念.html')" >Cultural Concept</a>
+                        <a href="" onclick="window.open('发展历程.html')" >Development Path</a>
+                        <a href="" onclick="window.open('企业荣誉.html')" >Honors</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="">News</a>
+                    <div class="open1">
+                        <a href="">Corporate News</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="">Product</a>
+                    <div class="open2">
+                        <a href="">HMI</a>
+                        <a href="">Hoistway Fixture</a>
+                        <a href="">Door System</a>
+                        <a href="">Cable &amp; Wire</a>
+                        <a href="">Control System</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" onclick="window.open('项目案例.html')">Successful Story</a>
+                </li>
+                <li>
+                    <a href="" onclick="window.open('服务与支持.html')">Service</a>
+                    <div class="open3">
+                        <a href="">Common Problem</a>
+                        <a href="">Downlode</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="">Human Resource</a>
+                    <div class="open4">
+                        <a href="">Job Opportunities</a>
+                        <a href="">Pay and Benefits</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="">Contact Us</a>
+                    <div class="open5">
+                        <a href="">Contact Us</a>
+                        <a href="">Supplier Solicitation</a>
+                        <a href="" onclick="window.open('留言反馈.html')">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $("main .nav ul li div").hide();
+        $(".nav_1 li").mouseover(function(){
+            $(this).css({background:"white"});
+            $(this).children("div").css({background:"white"});
+            $(this).children().css({color:"#1f49a3"});
+            $(this).children("div").stop().slideDown();
+        })
+        $(".nav_1 li").mouseout(function(){
+            $(this).css({background:""});
+            $(this).children().css({color:""});
+            $(this).children("div").stop().slideUp();
+        })
+      /*  $("a").click(function(){
+            var url=$(this).attr("href").replace("#/","")+".html";
+            //选中a标签，获取它的属性，将其中的#/替换成空，再+".html"文件类型，
+            //#不替换的话点击页面会重新刷新，跳一下影响效果
+            //不写#的话，在网址中会出现a.html不好看
+            $("iframe").attr("src",url)
+        })*/
+    </script>
+    <!--轮播图-->
+    <div class="box1">
+        <div class="imgs">
+            <a href="" class="show"><img src="img/2018031410080686.jpg"></a>
+            <a href=""> <img src="img/20170112104405445.jpg"></a>
+            <a href=""><img src="img/201709151931463146.jpg"></a>
+            <a href=""> <img src="img/201709191645454545.jpg"></a>
+            <a href=""><img src="img/201711161513511351.jpg"></a>
+            <a href=""> <img src="img/201805211451395139.jpg"></a>
+            <a href=""><img src="img/201809041533503350.jpg"></a>
+        </div>
+        <ul class="button">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+        <span class="right"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+        <span class="left"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    </div>
+    <script>
+        var img_link=document.querySelectorAll(".imgs a");
+        var img_btn=document.querySelectorAll(".button li");
+        var H=0;
+        function a(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            this.className="active";
+            img_link[this.num].className="show";
+            H=this.num;
+        }
+        img_btn[0].num=0;//实现图片和按钮的关联
+        img_btn[1].num=1;
+        img_btn[2].num=2;
+        img_btn[3].num=3;
+        img_btn[4].num=4;
+        img_btn[5].num=5;
+        img_btn[6].num=6;
+        img_btn[0].addEventListener ("click",a);
+        img_btn[1].addEventListener ("click",a);
+        img_btn[2].addEventListener ("click",a);
+        img_btn[3].addEventListener ("click",a);
+        img_btn[4].addEventListener ("click",a);
+        img_btn[5].addEventListener ("click",a);
+        img_btn[6].addEventListener ("click",a);
+        //右边按钮
+        var right=document.querySelector(".right");
+        function b(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            H++;
+            if(H>=img_btn.length){
+                H=0
+            }img_btn[H].className="active";
+            img_link[H].className="show";
+        }
+        right.addEventListener ("click",b);
+        //左边按钮
+        var left=document.querySelector(".left");
+        function c(){
+            for(var i=0;i<img_btn.length;i++){
+                img_btn[i].className="";
+                img_link[i].className="";
+            }
+            H--;
+            if( H<0){
+                H=img_btn.length-1;
+            }
+            img_btn[H].className="active";
+            img_link[H].className="show";
+        }
+        left.addEventListener ("click",c);
+        //定时器
+        var t=setInterval(b,5000);
+        var box1=document.querySelector(".box1");
+        function d(){
+            clearInterval(t);
+        }
+        box1.addEventListener("mouseover",d);
+        function e(){
+            t=setInterval(b,5000);
+        }
+        box1.addEventListener("mouseout",e)
+    </script>
+    <div class="product">
+        <h5 class="title">Product<a href="">more+</a></h5>
+        <div class="border">
+            <img src="img/HproIcon02.png" class="on">
+            <img src="img/HproIcon02_h.png" class="hide" style="left:138px">
+            <i></i>
+            <p class="p" style="margin-left:94px">HMI</p>
+        </div>
+        <div class="border">
+            <img src="img/201701051624252425.png" class="on">
+            <img src="img/201701051624202420.png" class="hide" style="left:381px">
+            <i></i>
+            <p class="p">Hoistway Fixture</p>
+        </div>
+        <div class="border">
+            <img src=" img/20170111170216216.png" class="on">
+            <img src="img/2017011117020828.png" class="hide" style="left:621px">
+            <i></i>
+            <p class="p">Door System</p>
+        </div>
+        <div class="border">
+            <img src="img/HproIcon04.png" class="on">
+            <img src="img/HproIcon04_h.png" class="hide" style="left:857px">
+            <i></i>
+            <p class="p">Cable &amp; Wire</p>
+        </div>
+        <div class="border">
+            <img src="img/HproIcon05.png" class="on">
+            <img src="img/HproIcon05_h.png" class="hide" style="right:142px">
+            <i></i>
+            <p class="p">Control System</p>
+        </div>
+    </div>
+    <!--新闻-->
+    <div class="news">
+        <h5 class="title">News</h5>
+        <button class="layui-icon layui-carousel-arrow" lay-type="sub"></button>
+        <button class="layui-icon layui-carousel-arrow" lay-type="add"></button>
+        <div class="layui-carousel" id="test1">
+            <div carousel-item style="height: 369px ;background: white">
+                <!--第一页-->
+                <div class="item">
+                        <a href="" class="item1">
+                            <div class="HnewsPic"><img src="img/201805141030583058.jpg"><span></span></div>
+                            <div class="Hnewstext">
+                                <h5 class="h5">Hand in Hand to Create Better ...</h5>
+                                <i></i>
+                                <p class="p">	On January 6th, 2018, the final projectselection for BST Innovation Contest was finished and the aw...</p>
+                                <em>2018-09-19</em>
+                            </div>
+                        </a>
+                        <a href="" class="item2">
+                            <div class="HnewsPic"><img src="img/201809041341194119.jpg"><span></span></div>
+                            <div class="Hnewstext">
+                                <h5 class="h5">Elevator Installation &amp; Electr...</h5>
+                                <i></i>
+                                <p class="p">As its population ages, ration above 60 yrs old goes up sharply in China. According to old buildi...</p>
+                                <em>2018-09-04</em>
+                            </div>
+                        </a>
+                        <a href="" class="item3">
+                            <div class="HnewsPic"><img src="img/201808240951485148.jpg"><span></span></div>
+                            <div class="Hnewstext">
+                                <h5 class="h5">2018 BST Family Summer Camp</h5>
+                                <i></i>
+                                <p class="p">		Time flies as we age.BST annual family summer camp kicks off.		BST have a group of childlike kids ...</p>
+                                <em>2018-08-27</em>
+                            </div>
+                        </a>
+                        <a href="" class="item4">
+                            <div class="HnewsPic"><img src="img/201808070828262826.jpg"><span></span></div>
+                            <div class="Hnewstext">
+                                <h5 class="h5">Two Decades' Love—— The Guests...</h5>
+                                <i></i>
+                                <p class="p">	On the afternoon of May 9th, 2018,&nbsp;Shanghai BST was full of gratitude to hold "Two Decades' Lo...</p>
+                                <em>2018-05-14</em>
+                            </div>
+                        </a>
+                </div>
+                <!--第erye-->
+                <div class="item">
+                    <a href="" class="item1">
+                        <div class="HnewsPic"><img src="img/20170112154009409.jpg"><span></span></div>
+                        <div class="Hnewstext">
+                            <h5 class="h5">Thank You – Party for BST Over...</h5>
+                            <i></i>
+                            <p class="p">	On May.11th, 2016, with gratitude and infinite thanks, Shanghai BST warmly held “Thank You – Party ...</p>
+                            <em>2016-05-11</em>
+                        </div>
+                    </a>
+                    <a href="" class="item2">
+                        <div class="HnewsPic"><img src="img/20170112150634634.jpg"><span></span></div>
+                        <div class="Hnewstext">
+                            <h5 class="h5">When  the elevator meets a fai...</h5>
+                            <i></i>
+                            <p class="p">	BST supplied the comprehensive system solutions for Shanghai Disneyland (Main Entrance, Tomorrowlan...</p>
+                            <em>2016-03-23</em>
+                        </div>
+                    </a>
+                    <a href="" class="item3">
+                        <div class="HnewsPic"><img src="img/20170112151408148.jpg"><span></span></div>
+                        <div class="Hnewstext">
+                            <h5 class="h5">BST Annual Gala- Endeavour ove...</h5>
+                            <i></i>
+                            <p class="p">	Spring goes and autumn comes,the sun sets and the moon rises in turn,even through the moment’s gone...</p>
+                            <em>2016-03-29</em>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../layui/layui.js"></script>
+     <script>
+        layui.use('carousel', function(){
+         var carousel = layui.carousel;
+          //建造实例
+          carousel.render({
+                        elem: '#test1'
+                        ,width: '100%' //设置容器宽度
+                        ,arrow: 'always' //始终显示箭头
+                        //,anim: 'updown' //切换动画方式
+                    });
+                });
+     </script>
+    <!--项目案例-->
+    <div class="project">
+        <h5 class="title">Product</h5>
+        <span class="prev"><img src="img/prevIcon.png"></span>
+        <span class="next"><img src="img/nextIcon.png"></span>
+        <div class="box">
+            <dl id="roll">
+                <dd>
+                    <img src="img/201807181444204420.jpg">
+                    <div class="HlistText">
+                        <span style="margin-left: 156px">National Stadium (Bi...</span>
+                        <p class="p">The 29th Olympic Games will be the main venue of t...</p>
+                    </div>
+                </dd>
+                <dd>
+                    <img src="img/201711061634333433.jpg">
+                    <div class="HlistText">
+                        <span style="margin-left: 132px">New York University</span>
+                        <p class="p">New York university, located in New York, USA, is ...</p>
+                    </div>
+                </dd>
+                <dd>
+                    <img src="img/201709261410561056.jpg">
+                    <div class="HlistText">
+                        <span style="margin-left: 130px">Shanghai Disney</span>
+                        <p class="p">Paradise has six theme parks, two theme hotels; an...</p>
+                    </div>
+                </dd>
+                <dd>
+                    <img src="img/2017111409070373.jpg">
+                    <div class="HlistText">
+                        <span style="margin-left: 130px">Chengdu Internationa...</span>
+                        <p class="p">This project is composed of four towers and podium...</p>
+                    </div>
+                </dd>
+                <dd>
+                    <img src="img/201706011419391939.jpg">
+                    <div class="HlistText">
+                        <span style="margin-left: 130px">Tianjin Chow Tai Foo...</span>
+                        <p class="p">Chow Tai Fook Center function as a set of shopping...</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <script>
+        (function($){
+            $.fn.parallelRoll = function(options){
+                var opts = $.extend({}, $.fn.parallelRoll.defaults, options);
+                var _this = this;
+                var l = _this.find(opts.tagName).length;
+                var autoRollTimer;
+                var flag = true; // 防止用户快速多次点击上下按钮
+                var arr = new Array();
+                /**
+                 * 如果当  (可视个数+滚动个数 >滚动元素个数)  时  为不出现空白停顿   将滚动元素再赋值一次
+                 * 同时赋值以后的滚动元素个数是之前的两倍  2 * l.
+                 * */
+                if(opts.amount + opts.visual > l){
+                    _this[0].innerHTML += _this[0].innerHTML;
+                    l = 2 * l;
+                }else{
+                    l = l;
+                }
+                var w = $(opts.tagName).outerWidth(true); //计算元素的宽度  包括补白+边框
+                _this.css({width: (l * w) + 'px'}); // 设置滚动层盒子的宽度
+                return this.each(function(){
+                    _this.closest('.'+opts.boxName).hover(function(){
+                        clearInterval(autoRollTimer);
+                    },function(){
+                        switch (opts.direction){
+                            case 'left':
+                                autoRollTimer = setInterval(function(){
+                                    left();
+                                },opts.time);
+                                break;
+                            case 'right':
+                                autoRollTimer = setInterval(function(){
+                                    right();
+                                },opts.time);
+                                break;
+                            default :
+                                alert('参数错误！');
+                                break;
+                        }
+                    }).trigger('mouseleave');
+                    $('.'+opts.prev).on('click',function(){
+                        flag ? left() : "";
+                    });
+                    $('.'+opts.next).on('click',function(){
+                        flag ? right() : "";
+                    });
+                });
+                function left(){
+                    flag = false;
+                    _this.animate({marginLeft : -(w*opts.amount)},1000,function(){
+                        _this.find(opts.tagName).slice(0,opts.amount).appendTo(_this);
+                        _this.css({marginLeft:0});
+                        flag = true;
+                    });
+                };
+                function right(){
+                    flag = false;
+                    arr = _this.find(opts.tagName).slice(-opts.amount);
+                    for(var i = 0; i<opts.amount; i++){
+                        $(arr[i]).css({marginLeft : -w*(i+1)}).prependTo(_this);
+                    }
+                    _this.animate({marginLeft : w*opts.amount},1000,function(){
+                        _this.find(opts.tagName).removeAttr('style');
+                        _this.css({marginLeft:0});
+                        flag = true;
+                    });
+                };
+            };
+            //插件默认选项
+            $.fn.parallelRoll.defaults = {
+                boxName : 'box',
+                tagName : 'dd',
+                time : 3000,  //
+                direction : 'left', // 滚动方向
+                visual : 7 , //可视数
+                prev : 'prev',
+                next : 'next',
+                amount : 1   // 滚动数  默认是1
+            };
+        })(jQuery);
+
+        $(document).ready(function(){
+            $("#roll").parallelRoll({
+                amount : 2
+            });
+        });
+
+    </script>
+</main>
+<footer>
+    <ul>
+        <li class="tip">
+            <a href="" style="color: white">Legal Notices</a>
+            <a href="" style="color: white">Sitemap</a>
+            <a href="" style="color: white">站长统计</a>
+            <span>share：</span>
+        </li>
+        <li class="mid"> <p>Please attention：</p></li>
+        <li class="photo"><img src="img/barcode.jpg"></li>
+        <li class="tip1">Copyright © 2017 Shanghai BST All Rights Reserved . 沪ICP备11045398</li>
+    </ul>
+</footer>
+<!--固定部分-->
+<div class="track" ><!--style="right: -194px;"-->
+    <div class="online">
+        <span>O<br>N<br>L<br>I<br>N<br>E</span>
+        <ul class="ul">
+            <li><a href="">Sales Advice</a></li>
+            <li><a href="">Sales Advice</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="free">
+        <span>H<br>O<br>T<br>L<br>I<br>N</span>
+        <ul class="ul">
+            <li><a href="">
+                <i>Sales Phone</i>
+                <p class="p">8621-58224368</p>
+            </a></li>
+            <li><a href="">
+                <i>Aftermarket Phone</i>
+                <p class="p">8621-58226900</p>
+            </a></li>
+        </ul>
+    </div>
+</div>
+<a href="#" class="top"><img src="img/returnBtn.jpg"></a>
+</body>
+</html>

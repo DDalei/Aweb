@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jQuery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{    text-align: center;
+            width: 100%;
+            height: 100%;
+            background-color: #0099FF;
+        }
+        .box{    margin-top: 0%;
+            width: 1020px;
+            height: 452px;}
+        .box .logo{width: 1366px;height:452px;}
+        #txtJobNum{position:relative;top: -258px;  left: 282px;}
+        #txtPassword{
+            position: relative;
+            top: -226px;
+            left: 123px;}
+        .box1{position: relative;
+            top: -222px;
+            left: 138px;
+            height: 35px;
+            display: inline-block;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/bg-Login.jpg" class="logo">
+    <input  type="text" value="" id="txtJobNum" style="width:150px;TEXT-TRANSFORM: uppercase;">
+    <input name="txtPassword" type="password" id="txtPassword" style="width:150px;">
+    <span class="box1"><img src="img/Login.JPG"></span>
+</div>
+<!--text-transform:uppercase:转换不同元素中的文本，uppercase：定义仅有大写字母-->
+<script>
+    $(".box1").click(function(){
+        alert("工号不存在")
+       /* var Name = form1.txtJobNum.value;
+        var Pass = form1.txtPassword.value;
+        if (Name == "") {
+            alert('工号不允为空！');
+            return false;
+        }
+        if (Pass == "") {
+            alert('密码不允许为空！');
+            return false;
+        }
+        if(Name.length>16||Pass.length>16)
+        {
+           alert('用户名和密码不允许超过16位！');
+        	 return false;
+        }
+        return true;
+        this.form1.Submit();*/
+    })
+
+</script>
+</body>
+</html>
